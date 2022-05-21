@@ -17,8 +17,16 @@
         <!-- roy -->
         <!-- This is displaying all the box -->
         <div class="container mt-5 d-flex flex-column align-items-center w-25 p-3 border">
-            <input class='first_name form-control' type='text' placeholder='Please type your name'>
+            <div class="input-parent">
+                <div class="d-flex parent after justify-content-center">
+                    <input class='value form-control' type='text' placeholder='Please type your name'>
+                    <i class=' del bi bi-x-circle-fill text-danger ms-2 mt-2' style='font-size: 20px; cursor: pointer;' ></i>
+                </div>
+            </div>
             <button class="submit btn btn-success mt-3 add_new_input">add new input</button>
+            <button class="btn btn-primary mt-2 sum">SUM</button>
         </div>
+
+        
     </body>
 </html>
