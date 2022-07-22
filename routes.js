@@ -3,20 +3,14 @@ const router = express.Router();
 
 const controller = require('./controller/main'); 
 
-router.get("/index", controller.index);
-router.get("/name",controller.name); 
 
+router.get("/user/login", controller.getLogin); 
 
-/* This route will route into login page 
+/* - desciption
+   - param: email, pass;
+   - respond: true or false;
 */
-router.get("/login", controller.login); 
-
-/* - this routes check the user credentials for login 
-   - param (username, password) ;
-   - response (boolean true=user access false= user denied)
-*/
-
-router.post("/login-check", controller.userLogin); 
+router.post("/user/login", controller.login); 
 
 
 

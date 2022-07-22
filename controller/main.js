@@ -1,35 +1,26 @@
 
 const data = {
 
-    index:(req, res)=>{
-        res.render("index"); 
-    },
-    name:(req, res)=>{
-        res.render("name"); 
+    getLogin: (req, res)=>{
+        res.render("login.ejs") 
     }, 
-    /* this will route into login page 
-    */
-   login: (req, res) => {
-        res.render("login"); 
-   },
-   /* logimn credentials submit
-   */ 
-   userLogin:(req, res) =>{ 
-    
-        const data = {
-            password: req.body.password, 
-            username: req.body.username,
-        }
+    login: (req, res)=>{
 
-        if(data.password == 123 && data.username == 'admin'){
-            //user access
-            res.json(true);
+
+        //1. validate the dtaa 
+        //2. check the databsse
+        console.log("server recieve the data");
+        console.log(req.body.email); 
+        console.log(req.body.pass);
+
+
+        if(req.body.email == "test" && req.body.pass == "test"){
+            res.json({status: 200, message: "Go top go", error: false}); 
         }
         else{
-            //user denied 
-            res.json(false); 
+            res.json({status: 400, message: "Forbidden", error: true}); 
         }
-   }
+    }
 
 }
 
